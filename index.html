@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>TFTIQ Builds – Set 18, Patch 18.7</title>
+<title>TFTIQ Builds</title>
 <meta name="description" content="Click a build to see the units and how to play it in the current TFT patch.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌀</text></svg>">
 <style>
@@ -56,7 +56,7 @@ footer a{color:var(--accent)}
 <body>
 <div class="wrap">
 <header>
-  <p class="top"><a href="https://github.com/OperationsResearchBit/TFTIQ">TFTIQ</a> · <span id="label">Set 18: Enchanted Wilds · Patch 18.7</span></p>
+  <p class="top"><a href="https://github.com/OperationsResearchBit/TFTIQ">TFTIQ</a> · <span id="label">Set 18 snapshot · Nov 20, 2026</span></p>
   <h1>Builds to play right now</h1>
   <p class="sub">Click a build to see its units and how to play it. Sorted by average placement.</p>
   <div class="controls" id="tiers" role="group" aria-label="Filter by tier"></div>
@@ -147,6 +147,7 @@ fetch("builds.json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).
   if(!d.builds||!d.builds.length) return;
   BUILDS=d.builds;
   el("label").textContent="Set "+(d.set||"")+" · Updated "+d.updated;
+  document.title="TFTIQ Builds – Set "+(d.set||"")+" ("+d.updated+")";
   el("src").textContent="Computed automatically from high-rank games ("+d.source+"). Updated "+d.updated+".";
   render();
 }).catch(()=>{});
