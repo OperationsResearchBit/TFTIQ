@@ -49,21 +49,26 @@ for m in match_ids:
                      key=lambda t: (t["style"], t["num_units"]), reverse=True)[:3]
         if len(act) < 2: continue
         groups[" / ".join(clean(t["name"]) for t in act)].append(
-            (p["placement"], p["level"], [clean(u["character_id"]) for u in p["units"]]))
+            (p["placement"], p["level"],
+             [(clean(u["character_id"]), [clean(i) for i in u.get("itemNames", [])]) for u in p["units"]]))
 
 builds = []
 for name, rows in groups.items():
     if len(rows) < MIN_GAMES: continue
     avg = mean(r[0] for r in rows)
     lvl = median(r[1] for r in rows)
-    uc = Counter(u for r in rows for u in set(r[2]))
-    units = [u for u, _ in uc.most_common(8)]
+    uc = Counter(n for r in rows for n in {u[0] for u in r[2]})
+    ic = defaultdict(Counter)
+    for r in rows:
+        for n, its in r[2]:
+            ic[n].update(its)
+    units = [{"name": n, "items": [i for i, _ in ic[n].most_common(3)]} for n, _ in uc.most_common(8)]
     tier = "S" if avg <= 4.0 else "A" if avg <= 4.3 else "B" if avg <= 4.6 else "C"
     builds.append({"name": name, "tier": tier,
                    "style": "Fast 9" if lvl >= 9 else "Fast 8" if lvl >= 8 else "Reroll",
                    "avg": round(avg, 2), "top4": round(100 * sum(r[0] <= 4 for r in rows) / len(rows)),
                    "games": len(rows), "units": units,
-                   "how": f"Seen {len(rows)} times in high-rank games, usually finishing around level {int(lvl)}. Most common units: {', '.join(units[:5])}."})
+                   "how": f"Seen {len(rows)} times in high-rank games, usually finishing around level {int(lvl)}. Most common units: {', '.join(u['name'] for u in units[:5])}."})
 builds.sort(key=lambda b: b["avg"])
 if not builds: sys.exit("No builds met the minimum sample size; keeping the old file.")
 
