@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TFTIQ Builds – Set 18, Patch 18.7</title>
+<meta name="description" content="Click a build to see the units and how to play it in the current TFT patch.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌀</text></svg>">
+<style>
+:root{
+  --bg:#f3f6fa;--surface:#fff;--ink:#0d254c;--soft:#4a5b78;--line:#d5deea;--accent:#1e467a;
+  --S:#c98a12;--A:#2a7f62;--B:#1e467a;--C:#7a6a8a;
+  color-scheme:light;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#081426;--surface:#0e2142;--ink:#e8eff9;--soft:#9db0cc;--line:#22395f;--accent:#7fb0ee;
+  --S:#f2b84b;--A:#5fd0a5;--B:#7fb0ee;--C:#b9a6cc;color-scheme:dark}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.0625rem/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header{padding:44px 0 18px}
+header p.top{margin:0 0 8px;color:var(--soft);font-size:.95rem}
+header a{color:var(--accent)}
+h1{margin:0;font-size:clamp(2rem,5vw,3rem);letter-spacing:-.02em;line-height:1.1}
+.sub{color:var(--soft);margin:10px 0 0;max-width:40rem}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 6px}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 14px;border-radius:999px;font:inherit;font-size:.95rem;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--S);outline-offset:2px}
+.count{color:var(--soft);font-size:.92rem;margin:4px 0 14px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:2.4rem 1fr auto;gap:14px;align-items:center;padding:14px 16px}
+summary::-webkit-details-marker{display:none}
+.tier{width:2.4rem;height:2.4rem;border-radius:8px;display:grid;place-items:center;font-weight:800;color:#fff}
+.tier.S{background:var(--S);color:#1a1202}.tier.A{background:var(--A);color:#04180f}.tier.B{background:var(--B);color:#fff}.tier.C{background:var(--C);color:#fff}
+@media (prefers-color-scheme:dark){.tier.B,.tier.C{color:#06101f}}
+.name{font-weight:700;font-size:1.1rem}
+.meta{color:var(--soft);font-size:.9rem}
+.avg{text-align:right;font-weight:700}
+.avg small{display:block;color:var(--soft);font-weight:400;font-size:.8rem}
+.body{padding:2px 16px 18px 16px;border-top:1px solid var(--line)}
+.body h3{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin:16px 0 8px}
+.units{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.units li{background:var(--bg);border:1px solid var(--line);padding:4px 11px;border-radius:6px;font-size:.95rem}
+.stats{display:flex;flex-wrap:wrap;gap:22px}
+.stats div b{display:block;font-size:1.25rem}
+.stats div span{color:var(--soft);font-size:.85rem}
+.how{margin:0;color:var(--ink)}
+footer{margin:36px 0 48px;padding-top:18px;border-top:1px solid var(--line);color:var(--soft);font-size:.9rem}
+footer a{color:var(--accent)}
+@media (max-width:520px){summary{grid-template-columns:2.4rem 1fr}.avg{grid-column:2;text-align:left}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="top"><a href="./">TFTIQ</a> · Set 18: Enchanted Wilds · Patch 18.7</p>
+  <h1>Builds to play right now</h1>
+  <p class="sub">Click a build to see its units and how to play it. Sorted by average placement.</p>
+  <div class="controls" id="tiers" role="group" aria-label="Filter by tier"></div>
+  <div class="controls" id="styles" role="group" aria-label="Filter by playstyle"></div>
+</header>
+<p class="count" id="count" aria-live="polite"></p>
+<main id="list"></main>
+<footer>
+  Snapshot taken November 20, 2026 from public stats on mid.gg (about 34,000 games, patch 18.7). Other sites rank some builds differently, and patch 19.1 (Set 19) is scheduled for December 1, 2026, so these will go out of date.
+  Not endorsed by Riot Games. <a href="https://github.com/OperationsResearchBit/TFTIQ">TFTIQ on GitHub</a> · <a href="https://operationsresearchbit.github.io/Typhoons/">Team Typhoons</a>
+</footer>
+</div>
+
+<script>
+/* To update: edit this list. avg = average placement, top4 = top 4 rate %, games = sample size. */
+const BUILDS = [
+  {name:"Juggernaut Elder Dragon", tier:"S", style:"Fast 9", avg:3.66, top4:63, games:8848,
+   units:["Amumu","Maokai","Kennen","Draven","Taric","Ivern","Ezreal"],
+   how:"Stabilize on a Juggernaut front line, then level to 9 and add the Elder Dragon payoff. Best performer in this snapshot."},
+  {name:"Vanguard Alune", tier:"S", style:"Fast 9", avg:3.95, top4:59, games:12032,
+   units:["Diana","Sentinel","Alune","Morgana","Taric","Fiddlesticks","Lillia","Rakan"],
+   how:"Hold a strong Vanguard board while you hit level 9, with Alune as the late-game carry."},
+  {name:"Zyra Executioner", tier:"A", style:"Reroll", avg:4.15, top4:56, games:8273,
+   units:["Azir","Fiddlesticks","Zyra","Soraka","Veigar","Rammus","Teemo"],
+   how:"Roll for Zyra and her low-cost core, then build around Executioner damage."},
+  {name:"Morgana Sprykin", tier:"A", style:"Reroll", avg:4.21, top4:57, games:11480,
+   units:["Teemo","Veigar","Kobuko","Alistar","LeBlanc","Hecarim","Morgana","Sentinel"],
+   how:"Reroll the cheap Sprykin core and upgrade to Morgana when you find her."},
+  {name:"Kayle Solar", tier:"B", style:"Reroll", avg:4.37, top4:53, games:21380,
+   units:["Leona","Kayle","Sejuani","Diana"],
+   how:"A simple, popular reroll with a small core of units. Easy to pick up, with a lower ceiling."},
+  {name:"Sivir & Vi Juggernaut", tier:"B", style:"Reroll", avg:4.38, top4:53, games:2239,
+   units:["Vi","Sivir","Caitlyn","Sejuani","Scuttlecrab","Tristana","Rakan"],
+   how:"Juggernaut reroll with Sivir as the carry. Small sample size, so treat the numbers loosely."},
+  {name:"Ahri & Yorick Blossom", tier:"B", style:"Fast 9", avg:4.52, top4:50, games:12274,
+   units:["Yorick","Sett","Ahri","Karma","Master Yi","Yunara"],
+   how:"Level to 9 and build around Ahri with Yorick up front."},
+  {name:"Maokai Juggernaut", tier:"B", style:"Fast 9", avg:4.54, top4:49, games:4401,
+   units:["Yorick","Amumu","Vi"],
+   how:"A Juggernaut variant that levels to 9. Weaker than the Elder Dragon version in this snapshot."},
+  {name:"Diana Ravager", tier:"C", style:"Other", avg:4.96, top4:42, games:3241,
+   units:["Akali","Diana"],
+   how:"Currently the weakest build listed. Fine to try for fun, but not for climbing."}
+];
+
+const state = {tier:"All", style:"All"};
+const el = id => document.getElementById(id);
+
+function chips(id, values, key){
+  el(id).innerHTML = "";
+  values.forEach(v=>{
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.textContent = v === "All" ? "All " + key : v;
+    b.setAttribute("aria-pressed", String(state[key.toLowerCase()==="tiers"?"tier":"style"]===v));
+    b.onclick = ()=>{ state[key.toLowerCase()==="tiers"?"tier":"style"] = v; render(); };
+    el(id).appendChild(b);
+  });
+}
+
+function render(){
+  chips("tiers", ["All","S","A","B","C"], "Tiers");
+  chips("styles", ["All", ...new Set(BUILDS.map(b=>b.style))], "Styles");
+  const rows = BUILDS.filter(b=>(state.tier==="All"||b.tier===state.tier)&&(state.style==="All"||b.style===state.style))
+                     .sort((a,b)=>a.avg-b.avg);
+  el("count").textContent = rows.length + (rows.length===1?" build":" builds");
+  el("list").innerHTML = rows.map(b=>`
+    <details>
+      <summary>
+        <span class="tier ${b.tier}">${b.tier}</span>
+        <span><span class="name">${b.name}</span><br><span class="meta">${b.style} · ${b.units.length} key units</span></span>
+        <span class="avg">${b.avg.toFixed(2)}<small>avg place</small></span>
+      </summary>
+      <div class="body">
+        <h3>Units</h3>
+        <ul class="units">${b.units.map(u=>`<li>${u}</li>`).join("")}</ul>
+        <h3>How to play it</h3>
+        <p class="how">${b.how}</p>
+        <h3>Stats</h3>
+        <div class="stats">
+          <div><b>${b.top4}%</b><span>Top 4 rate</span></div>
+          <div><b>${b.avg.toFixed(2)}</b><span>Avg placement</span></div>
+          <div><b>${b.games.toLocaleString()}</b><span>Games sampled</span></div>
+        </div>
+      </div>
+    </details>`).join("");
+}
+render();
+</script>
+</body>
+</html>
