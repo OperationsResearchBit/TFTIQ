@@ -8,7 +8,8 @@ import requests
 KEY = os.environ["RIOT_API_KEY"]
 PLATFORM = os.environ.get("PLATFORM", "na1")
 REGION = os.environ.get("REGION", "americas")
-PLAYERS, PER_PLAYER, MIN_GAMES = 40, 5, 20
+PLAYERS, PER_PLAYER, MIN_GAMES = 100, 10, 20
+MIN_HIDDEN_GAMES, MAX_RATE = 100, 3.0   # hidden pick: enough games, rarely played, top 4 clearly above 50%
 H = {"X-Riot-Token": KEY}
 
 def get(url):
@@ -20,6 +21,12 @@ def get(url):
         if r.status_code == 200: return r.json()
         print("skip", r.status_code, url.split("?")[0][-60:]); return None
     return None
+
+def wilson_lo(k, n, z=1.96):
+    """Lower bound of the 95% confidence interval for a rate k/n."""
+    if n == 0: return 0.0
+    p = k / n
+    return (p + z*z/(2*n) - z*((p*(1-p) + z*z/(4*n)) / n) ** 0.5) / (1 + z*z/n)
 
 def clean(n):
     n = re.sub(r"^TFT\d*_(?:Item_|Augment_)?", "", n or "")
@@ -49,9 +56,9 @@ for m in match_ids:
                      key=lambda t: (t["style"], t["num_units"]), reverse=True)[:3]
         if len(act) < 2: continue
         groups[" / ".join(clean(t["name"]) for t in act)].append(
-            (p["placement"], p["level"],
-             [(clean(u["character_id"]), [clean(i) for i in u.get("itemNames", [])]) for u in p["units"]]))
+            (p["placement"], p["level"], [(clean(u["character_id"]), [clean(i) for i in u.get("itemNames", [])]) for u in p["units"]]))
 
+total = sum(len(r) for r in groups.values())
 builds = []
 for name, rows in groups.items():
     if len(rows) < MIN_GAMES: continue
@@ -64,7 +71,11 @@ for name, rows in groups.items():
             ic[n].update(its)
     units = [{"name": n, "items": [i for i, _ in ic[n].most_common(3)]} for n, _ in uc.most_common(8)]
     tier = "S" if avg <= 4.0 else "A" if avg <= 4.3 else "B" if avg <= 4.6 else "C"
-    builds.append({"name": name, "tier": tier,
+    t4 = sum(r[0] <= 4 for r in rows)
+    rate = 100 * len(rows) / total
+    lo = wilson_lo(t4, len(rows))
+    hidden = len(rows) >= MIN_HIDDEN_GAMES and rate < MAX_RATE and lo > 0.5
+    builds.append({"name": name, "tier": tier, "hidden": hidden, "rate": round(rate, 1), "top4_lo": round(100*lo),
                    "style": "Fast 9" if lvl >= 9 else "Fast 8" if lvl >= 8 else "Reroll",
                    "avg": round(avg, 2), "top4": round(100 * sum(r[0] <= 4 for r in rows) / len(rows)),
                    "games": len(rows), "units": units,
