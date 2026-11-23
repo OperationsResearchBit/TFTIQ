@@ -29,6 +29,17 @@ h1{margin:0;font-size:clamp(2rem,5vw,3rem);letter-spacing:-.02em;line-height:1.1
 .chip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 14px;border-radius:999px;font:inherit;font-size:.95rem;cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .chip:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--S);outline-offset:2px}
+.badge{display:inline-block;margin-left:8px;padding:1px 8px;border-radius:999px;background:var(--accent);color:var(--bg);font-size:.75rem;font-weight:700;vertical-align:middle}
+.warn{color:var(--S);font-size:.85rem;margin:10px 0 0}
+.spot{margin:4px 0 22px}.spot h2{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin:0 0 10px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.card{background:var(--surface);border:1.5px solid var(--accent);border-radius:14px;padding:16px}
+.card .nm{font-weight:700;margin-bottom:8px}.card .big{font-size:2.1rem;font-weight:800;letter-spacing:-.02em;line-height:1}
+.card .big small{font-size:.8rem;font-weight:500;color:var(--soft);margin-left:6px;letter-spacing:0}
+.rng{position:relative;height:8px;border-radius:4px;background:var(--line);margin:14px 0 6px}
+.rng i{position:absolute;top:0;bottom:0;border-radius:4px;background:var(--accent)}
+.rng u{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--soft)}
+.card .cap{color:var(--soft);font-size:.82rem}
 .count{color:var(--soft);font-size:.92rem;margin:4px 0 14px}
 details{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
 summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:2.4rem 1fr auto;gap:14px;align-items:center;padding:14px 16px}
@@ -43,6 +54,8 @@ summary::-webkit-details-marker{display:none}
 .body{padding:2px 16px 18px 16px;border-top:1px solid var(--line)}
 .body h3{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin:16px 0 8px}
 .units{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.units li.u{display:flex;flex-direction:column;gap:3px;min-width:8.5rem}.units li .its{color:var(--soft);font-size:.82rem}.units li .its b{color:var(--ink);font-weight:600}
+#q{width:100%;max-width:26rem;margin-top:16px;padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit}
 .units li{background:var(--bg);border:1px solid var(--line);padding:4px 11px;border-radius:6px;font-size:.95rem}
 .stats{display:flex;flex-wrap:wrap;gap:22px}
 .stats div b{display:block;font-size:1.25rem}
@@ -51,17 +64,27 @@ summary::-webkit-details-marker{display:none}
 footer{margin:36px 0 48px;padding-top:18px;border-top:1px solid var(--line);color:var(--soft);font-size:.9rem}
 footer a{color:var(--accent)}
 @media (max-width:520px){summary{grid-template-columns:2.4rem 1fr}.avg{grid-column:2;text-align:left}}
+
+header{position:relative}
+header::before{content:"";position:absolute;inset:0 -20px;z-index:-1;background-image:radial-gradient(circle at 1px 1px,rgba(128,128,128,.22) 1px,transparent 0);background-size:22px 22px;-webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent)}
+.logo{width:26px;height:26px;vertical-align:-6px;margin-right:8px;color:var(--accent)}
+.av{flex:none;width:30px;height:30px;display:grid;place-items:center;font-weight:800;font-size:.85rem;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);background:linear-gradient(135deg,hsl(var(--h) 70% 52%),hsl(calc(var(--h) + 40) 65% 32%));clip-path:polygon(25% 4%,75% 4%,100% 50%,75% 96%,25% 96%,0 50%)}
+.units li.u{display:flex;flex-direction:row;align-items:center;gap:9px;min-width:8.5rem}
+.un{display:flex;flex-direction:column;gap:2px}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
-  <p class="top"><a href="https://github.com/OperationsResearchBit/TFTIQ">TFTIQ</a> · <span id="label">Set 18 snapshot · Nov 20, 2026</span></p>
+  <p class="top"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l12 7v14l-12 7-12-7V9z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><circle cx="16" cy="16" r="4.2" fill="currentColor"/><path d="M16 7.5v3M16 21.5v3M7.5 16h3M21.5 16h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><a href="https://github.com/OperationsResearchBit/TFTIQ">TFTIQ</a> · <span id="label">Set 18 snapshot · Nov 20, 2026</span></p>
   <h1>Builds to play right now</h1>
   <p class="sub">Click a build to see its units and how to play it. Sorted by average placement.</p>
+  <input id="q" type="search" placeholder="Search builds or units" aria-label="Search builds or units">
   <div class="controls" id="tiers" role="group" aria-label="Filter by tier"></div>
+  <div class="controls" id="show" role="group" aria-label="Show"></div>
   <div class="controls" id="styles" role="group" aria-label="Filter by playstyle"></div>
 </header>
+<section class="spot" id="spot"></section>
 <p class="count" id="count" aria-live="polite"></p>
 <main id="list"></main>
 <footer>
@@ -102,7 +125,10 @@ let BUILDS = [
    how:"Currently the weakest build listed. Fine to try for fun, but not for climbing."}
 ];
 
-const state = {tier:"All", style:"All"};
+const state = {tier:"All", style:"All", q:"", hid:false};
+const uname = u => typeof u === "string" ? u : u.name;
+const hue = s => { let x=0; for(const c of s) x=(x*31+c.charCodeAt(0))%360; return x; };
+const unitLi = u => { const n=uname(u), its=typeof u!=="string"&&u.items&&u.items.length?`<span class="its">Items: <b>${u.items.join(", ")}</b></span>`:""; return `<li class="u"><span class="av" style="--h:${hue(n)}" aria-hidden="true">${n.charAt(0)}</span><span class="un"><span>${n}</span>${its}</span></li>`; };
 const el = id => document.getElementById(id);
 
 function chips(id, values, key){
@@ -116,22 +142,39 @@ function chips(id, values, key){
   });
 }
 
+function spot(){
+  const h=BUILDS.filter(b=>b.hidden).sort((a,b)=>b.top4-a.top4).slice(0,3);
+  const on=h.length&&!state.hid&&!state.q&&state.tier==="All"&&state.style==="All";
+  const pos=v=>Math.max(0,Math.min(100,(v-30)/50*100));
+  el("spot").innerHTML=on?`<h2>Hidden picks: rarely played, clearly winning</h2><div class="cards">`+h.map(b=>{
+    const lo=b.top4_lo!=null?b.top4_lo:b.top4-8, hi=b.top4+(b.top4-lo);
+    return `<div class="card"><div class="nm">${b.name}</div><div class="big">${b.top4}%<small>top 4</small></div>
+    <div class="rng" aria-hidden="true"><i style="left:${pos(lo)}%;width:${pos(hi)-pos(lo)}%"></i><u style="left:${pos(50)}%"></u></div>
+    <div class="cap">Likely range ${Math.round(lo)}–${Math.round(hi)}% (line = 50%) · played in ${b.rate}% of games · ${b.games} games</div></div>`}).join("")+`</div>`:"";
+}
 function render(){
   chips("tiers", ["All","S","A","B","C"], "Tiers");
+  el("show").innerHTML = "";
+  [["All builds",false],["Hidden picks",true]].forEach(([t,v])=>{
+    const b = document.createElement("button");
+    b.className="chip"; b.type="button"; b.textContent=t; b.setAttribute("aria-pressed", String(state.hid===v));
+    b.onclick=()=>{state.hid=v;render();}; el("show").appendChild(b);
+  });
   chips("styles", ["All", ...new Set(BUILDS.map(b=>b.style))], "Styles");
-  const rows = BUILDS.filter(b=>(state.tier==="All"||b.tier===state.tier)&&(state.style==="All"||b.style===state.style))
+  const rows = BUILDS.filter(b=>(state.tier==="All"||b.tier===state.tier)&&(state.style==="All"||b.style===state.style)&&(!state.hid||b.hidden)&&(!state.q||(b.name+" "+b.units.map(uname).join(" ")).toLowerCase().includes(state.q)))
                      .sort((a,b)=>a.avg-b.avg);
+  spot();
   el("count").textContent = rows.length + (rows.length===1?" build":" builds");
   el("list").innerHTML = rows.map(b=>`
     <details>
       <summary>
         <span class="tier ${b.tier}">${b.tier}</span>
-        <span><span class="name">${b.name}</span><br><span class="meta">${b.style} · ${b.units.length} key units</span></span>
+        <span><span class="name">${b.name}</span>${b.hidden?'<span class="badge">Hidden pick</span>':""}<br><span class="meta">${b.style} · ${b.units.length} key units</span></span>
         <span class="avg">${b.avg.toFixed(2)}<small>avg place</small></span>
       </summary>
       <div class="body">
-        <h3>Units</h3>
-        <ul class="units">${b.units.map(u=>`<li>${u}</li>`).join("")}</ul>
+        <h3>Key units and their best items</h3>
+        <ul class="units">${b.units.map(unitLi).join("")}</ul>
         <h3>How to play it</h3>
         <p class="how">${b.how}</p>
         <h3>Stats</h3>
@@ -139,7 +182,9 @@ function render(){
           <div><b>${b.top4}%</b><span>Top 4 rate</span></div>
           <div><b>${b.avg.toFixed(2)}</b><span>Avg placement</span></div>
           <div><b>${b.games.toLocaleString()}</b><span>Games sampled</span></div>
+          ${b.rate!=null?`<div><b>${b.rate}%</b><span>Play rate</span></div>`:""}
         </div>
+        ${b.games<100?'<p class="warn">Small sample: treat these numbers as rough.</p>':""}
       </div>
     </details>`).join("");
 }
@@ -151,6 +196,7 @@ fetch("builds.json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).
   el("src").textContent="Computed automatically from high-rank games ("+d.source+"). Updated "+d.updated+".";
   render();
 }).catch(()=>{});
+el("q").addEventListener("input",e=>{state.q=e.target.value.trim().toLowerCase();render();});
 render();
 </script>
 </body>
