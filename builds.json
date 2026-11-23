@@ -1,179 +1,22 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-23",
  "set": 18,
  "source": "Challenger games sampled from NA1 via the Riot API",
  "builds": [
   {
-   "name": "DA Riftbeast18 / DA Emerald18 / DA 18 Apex Predator",
-   "tier": "S",
-   "style": "Fast 9",
-   "avg": 3.38,
-   "top4": 71,
-   "games": 58,
-   "units": [
-    {
-     "name": "DA 18 Elder Dragon",
-     "items": [
-      "DA Infinity Edge",
-      "DA Last Whisper",
-      "DA Deathblade"
-     ]
-    },
-    {
-     "name": "DA Krug18",
-     "items": [
-      "DA Spirit Visage",
-      "DA Gargoyle Stoneplate",
-      "DA Warmogs Armor"
-     ]
-    },
-    {
-     "name": "DA Sentinel18",
-     "items": [
-      "DA Protectors Vow",
-      "DA Spirit Visage",
-      "DA Gargoyle Stoneplate"
-     ]
-    },
-    {
-     "name": "DA Taric18",
-     "items": [
-      "DA Gargoyle Stoneplate",
-      "DA Evenshroud",
-      "DA Warmogs Armor"
-     ]
-    },
-    {
-     "name": "DA Murkwolf18",
-     "items": [
-      "DA Giant Slayer",
-      "DA Thiefs Gloves",
-      "DA Edge Of Night"
-     ]
-    },
-    {
-     "name": "DA Brambleback18",
-     "items": [
-      "DA Guinsoos Rageblade",
-      "DA Edge Of Night",
-      "DA Quicksilver"
-     ]
-    },
-    {
-     "name": "DA 18 Sentry",
-     "items": [
-      "DA Jeweled Gauntlet",
-      "DA Red Buff",
-      "DA Component Needlessly Large Rod"
-     ]
-    },
-    {
-     "name": "DA Scuttlecrab18",
-     "items": [
-      "DA Spirit Visage",
-      "DA Gargoyle Stoneplate"
-     ]
-    }
-   ],
-   "how": "Seen 58 times in high-rank games, usually finishing around level 9. Most common units: DA 18 Elder Dragon, DA Krug18, DA Sentinel18, DA Taric18, DA Murkwolf18."
-  },
-  {
-   "name": "DA 18 Greenfather / DA 18 Maokai Unique Trait / DA Emerald18",
-   "tier": "S",
-   "style": "Fast 9",
-   "avg": 3.38,
-   "top4": 71,
-   "games": 52,
-   "units": [
-    {
-     "name": "DA 18 Ivern",
-     "items": [
-      "DA Spear Of Shojin",
-      "DA Guinsoos Rageblade",
-      "DA Blue Buff"
-     ]
-    },
-    {
-     "name": "DA 18 Maokai",
-     "items": [
-      "DA Warmogs Armor",
-      "DA Gargoyle Stoneplate",
-      "DA Crownguard"
-     ]
-    },
-    {
-     "name": "DA Taric18",
-     "items": [
-      "DA Protectors Vow",
-      "DA Crownguard",
-      "DA Spirit Visage"
-     ]
-    },
-    {
-     "name": "DA Amumu18",
-     "items": [
-      "DA Gargoyle Stoneplate",
-      "DA Warmogs Armor",
-      "DA Spirit Visage"
-     ]
-    },
-    {
-     "name": "DA 18 Kennen",
-     "items": [
-      "DA Thiefs Gloves",
-      "DA Rabadons Deathcap",
-      "DA Edge Of Night"
-     ]
-    },
-    {
-     "name": "DA Draven18",
-     "items": [
-      "DA Guinsoos Rageblade",
-      "DA Krakens Fury",
-      "DA Deathblade"
-     ]
-    },
-    {
-     "name": "DA Sentinel18",
-     "items": [
-      "DA Protectors Vow",
-      "DA Warmogs Armor",
-      "DA Crownguard"
-     ]
-    },
-    {
-     "name": "DA 18 Elder Dragon",
-     "items": [
-      "DA Infinity Edge",
-      "DA Steraks Gage",
-      "DA Hand Of Justice"
-     ]
-    }
-   ],
-   "how": "Seen 52 times in high-rank games, usually finishing around level 9. Most common units: DA 18 Ivern, DA 18 Maokai, DA Taric18, DA Amumu18, DA 18 Kennen."
-  },
-  {
    "name": "DA 18 Greenfather / DA Emerald18 / DA Alune Unique Trait18",
    "tier": "S",
    "style": "Fast 9",
-   "avg": 3.43,
-   "top4": 61,
-   "games": 23,
+   "avg": 3.21,
+   "top4": 62,
+   "games": 24,
    "units": [
     {
      "name": "DA 18 Ivern",
      "items": [
-      "DA Spear Of Shojin",
       "DA Guinsoos Rageblade",
-      "DA Nashors Tooth"
-     ]
-    },
-    {
-     "name": "DA 18 Alune",
-     "items": [
       "DA Spear Of Shojin",
-      "DA Jeweled Gauntlet",
-      "DA Rabadons Deathcap"
+      "DA Void Staff"
      ]
     },
     {
@@ -181,7 +24,15 @@
      "items": [
       "DA Gargoyle Stoneplate",
       "DA Bramble Vest",
-      "DA Protectors Vow"
+      "DA Spirit Visage"
+     ]
+    },
+    {
+     "name": "DA 18 Alune",
+     "items": [
+      "DA Jeweled Gauntlet",
+      "DA Spear Of Shojin",
+      "DA Blue Buff"
      ]
     },
     {
@@ -217,26 +68,183 @@
      "items": [
       "DA Protectors Vow",
       "DA Gargoyle Stoneplate",
-      "DA Warmogs Armor"
+      "DA Adaptive Helm"
      ]
     }
    ],
-   "how": "Seen 23 times in high-rank games, usually finishing around level 9. Most common units: DA 18 Ivern, DA 18 Alune, DA Taric18, DA Sentinel18, DA 18 Morgana."
+   "how": "Seen 24 times in high-rank games, usually finishing around level 9. Most common units: DA 18 Ivern, DA Taric18, DA 18 Alune, DA Sentinel18, DA 18 Morgana."
+  },
+  {
+   "name": "DA Riftbeast18 / DA Emerald18 / DA 18 Apex Predator",
+   "tier": "S",
+   "style": "Fast 9",
+   "avg": 3.31,
+   "top4": 74,
+   "games": 58,
+   "units": [
+    {
+     "name": "DA Krug18",
+     "items": [
+      "DA Spirit Visage",
+      "DA Gargoyle Stoneplate",
+      "DA Warmogs Armor"
+     ]
+    },
+    {
+     "name": "DA Sentinel18",
+     "items": [
+      "DA Protectors Vow",
+      "DA Spirit Visage",
+      "DA Gargoyle Stoneplate"
+     ]
+    },
+    {
+     "name": "DA Taric18",
+     "items": [
+      "DA Gargoyle Stoneplate",
+      "DA Warmogs Armor",
+      "DA Spirit Visage"
+     ]
+    },
+    {
+     "name": "DA Brambleback18",
+     "items": [
+      "DA Guinsoos Rageblade",
+      "DA Edge Of Night",
+      "DA Quicksilver"
+     ]
+    },
+    {
+     "name": "DA 18 Elder Dragon",
+     "items": [
+      "DA Infinity Edge",
+      "DA Last Whisper",
+      "DA Deathblade"
+     ]
+    },
+    {
+     "name": "DA Murkwolf18",
+     "items": [
+      "DA Bloodthirster",
+      "DA Last Whisper",
+      "DA Component Recurve Bow"
+     ]
+    },
+    {
+     "name": "DA 18 Sentry",
+     "items": [
+      "DA Component Needlessly Large Rod",
+      "DA Red Buff",
+      "DA Component Tear Of The Goddess"
+     ]
+    },
+    {
+     "name": "DA Scuttlecrab18",
+     "items": [
+      "DA Spirit Visage",
+      "DA Gargoyle Stoneplate"
+     ]
+    }
+   ],
+   "how": "Seen 58 times in high-rank games, usually finishing around level 9. Most common units: DA Krug18, DA Sentinel18, DA Taric18, DA Brambleback18, DA 18 Elder Dragon."
+  },
+  {
+   "name": "DA 18 Greenfather / DA 18 Maokai Unique Trait / DA Emerald18",
+   "tier": "S",
+   "style": "Fast 9",
+   "avg": 3.53,
+   "top4": 68,
+   "games": 53,
+   "units": [
+    {
+     "name": "DA 18 Ivern",
+     "items": [
+      "DA Spear Of Shojin",
+      "DA Guinsoos Rageblade",
+      "DA Blue Buff"
+     ]
+    },
+    {
+     "name": "DA 18 Maokai",
+     "items": [
+      "DA Warmogs Armor",
+      "DA Gargoyle Stoneplate",
+      "DA Crownguard"
+     ]
+    },
+    {
+     "name": "DA Taric18",
+     "items": [
+      "DA Protectors Vow",
+      "DA Warmogs Armor",
+      "DA Spirit Visage"
+     ]
+    },
+    {
+     "name": "DA Amumu18",
+     "items": [
+      "DA Gargoyle Stoneplate",
+      "DA Warmogs Armor",
+      "DA Spirit Visage"
+     ]
+    },
+    {
+     "name": "DA 18 Kennen",
+     "items": [
+      "DA Thiefs Gloves",
+      "DA Rabadons Deathcap",
+      "DA Edge Of Night"
+     ]
+    },
+    {
+     "name": "DA Draven18",
+     "items": [
+      "DA Guinsoos Rageblade",
+      "DA Krakens Fury",
+      "DA Deathblade"
+     ]
+    },
+    {
+     "name": "DA Sentinel18",
+     "items": [
+      "DA Protectors Vow",
+      "DA Gargoyle Stoneplate",
+      "DA Adaptive Helm"
+     ]
+    },
+    {
+     "name": "DA 18 Elder Dragon",
+     "items": [
+      "DA Infinity Edge",
+      "DA Steraks Gage",
+      "DA Hand Of Justice"
+     ]
+    }
+   ],
+   "how": "Seen 53 times in high-rank games, usually finishing around level 9. Most common units: DA 18 Ivern, DA 18 Maokai, DA Taric18, DA Amumu18, DA 18 Kennen."
   },
   {
    "name": "DA Riftbeast18 / DA 18 Apex Predator / DA 18 Brawler",
    "tier": "B",
    "style": "Fast 8",
-   "avg": 4.37,
-   "top4": 56,
-   "games": 27,
+   "avg": 4.34,
+   "top4": 55,
+   "games": 29,
    "units": [
     {
-     "name": "DA Murkwolf18",
+     "name": "DA Krug18",
      "items": [
-      "DA Guinsoos Rageblade",
-      "DA Component Recurve Bow",
-      "DA Steraks Gage"
+      "DA Gargoyle Stoneplate",
+      "DA Spirit Visage",
+      "DA Dragons Claw"
+     ]
+    },
+    {
+     "name": "DA Sentinel18",
+     "items": [
+      "DA Protectors Vow",
+      "DA Adaptive Helm",
+      "DA Spirit Visage"
      ]
     },
     {
@@ -248,6 +256,14 @@
      ]
     },
     {
+     "name": "DA Murkwolf18",
+     "items": [
+      "DA Guinsoos Rageblade",
+      "DA Component Recurve Bow",
+      "DA Steraks Gage"
+     ]
+    },
+    {
      "name": "DA Brambleback18",
      "items": [
       "DA Edge Of Night",
@@ -256,27 +272,11 @@
      ]
     },
     {
-     "name": "DA Krug18",
-     "items": [
-      "DA Gargoyle Stoneplate",
-      "DA Spirit Visage",
-      "DA Evenshroud"
-     ]
-    },
-    {
-     "name": "DA Sentinel18",
-     "items": [
-      "DA Protectors Vow",
-      "DA Spirit Visage",
-      "DA Adaptive Helm"
-     ]
-    },
-    {
      "name": "DA 18 Sentry",
      "items": [
-      "DA Component Tear Of The Goddess",
-      "DA Red Buff",
-      "DA Morellonomicon"
+      "DA Blue Buff",
+      "DA Morellonomicon",
+      "DA Last Whisper"
      ]
     },
     {
@@ -296,32 +296,16 @@
      ]
     }
    ],
-   "how": "Seen 27 times in high-rank games, usually finishing around level 8. Most common units: DA Murkwolf18, DA 18 Elder Dragon, DA Brambleback18, DA Krug18, DA Sentinel18."
+   "how": "Seen 29 times in high-rank games, usually finishing around level 8. Most common units: DA Krug18, DA Sentinel18, DA 18 Elder Dragon, DA Murkwolf18, DA Brambleback18."
   },
   {
    "name": "DA 18 Zyra Unique Trait / DA 18 Blossom / DA 18 Brawler",
    "tier": "C",
    "style": "Fast 8",
-   "avg": 5.1,
-   "top4": 39,
-   "games": 41,
+   "avg": 5.11,
+   "top4": 37,
+   "games": 35,
    "units": [
-    {
-     "name": "DA 18 Zyra",
-     "items": [
-      "DA Void Staff",
-      "DA Morellonomicon",
-      "DA Spear Of Shojin"
-     ]
-    },
-    {
-     "name": "DA 18 Ahri",
-     "items": [
-      "DA Jeweled Gauntlet",
-      "DA Spear Of Shojin",
-      "DA Strikers Flail"
-     ]
-    },
     {
      "name": "DA 18 Sett",
      "items": [
@@ -335,19 +319,35 @@
      "items": []
     },
     {
+     "name": "DA 18 Zyra",
+     "items": [
+      "DA Void Staff",
+      "DA Spear Of Shojin",
+      "DA Morellonomicon"
+     ]
+    },
+    {
+     "name": "DA 18 Ahri",
+     "items": [
+      "DA Jeweled Gauntlet",
+      "DA Spear Of Shojin",
+      "DA Strikers Flail"
+     ]
+    },
+    {
      "name": "DA Fiddlesticks18",
      "items": [
       "DA Thiefs Gloves",
-      "DA Strikers Flail",
-      "DA Titans Resolve"
+      "DA Titans Resolve",
+      "DA Strikers Flail"
      ]
     },
     {
      "name": "DA 18 Lillia",
      "items": [
-      "DA Protectors Vow",
       "DA Adaptive Helm",
-      "DA Spirit Visage"
+      "DA Protectors Vow",
+      "DA Gargoyle Stoneplate"
      ]
     },
     {
@@ -362,45 +362,20 @@
      "name": "DA Krug18",
      "items": [
       "DA Gargoyle Stoneplate",
-      "DA Spirit Visage",
-      "DA Component Chain Vest"
+      "DA Spirit Visage"
      ]
     }
    ],
-   "how": "Seen 41 times in high-rank games, usually finishing around level 8. Most common units: DA 18 Zyra, DA 18 Ahri, DA 18 Sett, DA 18 Yorick, DA Fiddlesticks18."
+   "how": "Seen 35 times in high-rank games, usually finishing around level 8. Most common units: DA 18 Sett, DA 18 Yorick, DA 18 Zyra, DA 18 Ahri, DA Fiddlesticks18."
   },
   {
    "name": "DA 18 Summoner / DA Flora Fatalis18 / DA 18 Battlemage",
    "tier": "C",
    "style": "Fast 8",
-   "avg": 5.37,
-   "top4": 37,
-   "games": 41,
+   "avg": 5.31,
+   "top4": 42,
+   "games": 36,
    "units": [
-    {
-     "name": "DA 18 Zyra",
-     "items": [
-      "DA Spear Of Shojin",
-      "DA Void Staff",
-      "DA Jeweled Gauntlet"
-     ]
-    },
-    {
-     "name": "DA 18 Yorick",
-     "items": [
-      "DA Thiefs Gloves",
-      "DA Component BFSword",
-      "DA 18 Emblem Coven"
-     ]
-    },
-    {
-     "name": "DA 18 Azir",
-     "items": [
-      "DA Thiefs Gloves",
-      "DA Jeweled Gauntlet",
-      "DA Rabadons Deathcap"
-     ]
-    },
     {
      "name": "DA 18 Soraka",
      "items": [
@@ -410,11 +385,35 @@
      ]
     },
     {
+     "name": "DA 18 Azir",
+     "items": [
+      "DA Thiefs Gloves",
+      "DA Rabadons Deathcap",
+      "DA Jeweled Gauntlet"
+     ]
+    },
+    {
+     "name": "DA 18 Zyra",
+     "items": [
+      "DA Void Staff",
+      "DA Spear Of Shojin",
+      "DA Archangels Staff"
+     ]
+    },
+    {
      "name": "DA 18 Malphite",
      "items": [
       "DA Gargoyle Stoneplate",
       "DA Warmogs Armor",
       "DA Crownguard"
+     ]
+    },
+    {
+     "name": "DA 18 Yorick",
+     "items": [
+      "DA Thiefs Gloves",
+      "DA Sunfire Cape",
+      "DA Morellonomicon"
      ]
     },
     {
@@ -429,43 +428,188 @@
      "name": "DA Amumu18",
      "items": [
       "DA Gargoyle Stoneplate",
-      "DA Steadfast Heart",
-      "DA Warmogs Armor"
+      "DA Warmogs Armor",
+      "DA Steadfast Heart"
      ]
     },
     {
      "name": "DA 18 Kennen",
      "items": [
-      "DA Void Staff",
+      "DA Bloodthirster",
       "DA Thiefs Gloves",
-      "DA Bloodthirster"
+      "DA Void Staff"
      ]
     }
    ],
-   "how": "Seen 41 times in high-rank games, usually finishing around level 8. Most common units: DA 18 Zyra, DA 18 Yorick, DA 18 Azir, DA 18 Soraka, DA 18 Malphite."
+   "how": "Seen 36 times in high-rank games, usually finishing around level 8. Most common units: DA 18 Soraka, DA 18 Azir, DA 18 Zyra, DA 18 Malphite, DA 18 Yorick."
+  },
+  {
+   "name": "DA 18 Caustic / DA 18 Adaptor / DA 18 Inferno",
+   "tier": "C",
+   "style": "Fast 8",
+   "avg": 5.35,
+   "top4": 35,
+   "games": 20,
+   "units": [
+    {
+     "name": "DA Kog Maw18 AD",
+     "items": [
+      "DA Component Recurve Bow",
+      "DA Red Buff",
+      "DA Blue Buff"
+     ]
+    },
+    {
+     "name": "DA Sentinel18",
+     "items": [
+      "DA Protectors Vow",
+      "DA Gargoyle Stoneplate",
+      "DA Spirit Visage"
+     ]
+    },
+    {
+     "name": "DA 18 Diana",
+     "items": [
+      "DA Edge Of Night",
+      "DA Thiefs Gloves",
+      "DA Steraks Gage"
+     ]
+    },
+    {
+     "name": "DA Nidalee18 AP",
+     "items": [
+      "DA Steraks Gage",
+      "DA Infinity Edge",
+      "DA Edge Of Night"
+     ]
+    },
+    {
+     "name": "DA 18 Aphelios",
+     "items": [
+      "DA Guinsoos Rageblade",
+      "DA Infinity Edge",
+      "DA Krakens Fury"
+     ]
+    },
+    {
+     "name": "DA Vi18",
+     "items": [
+      "DA Gargoyle Stoneplate",
+      "DA Adaptive Helm",
+      "DA Spirit Visage"
+     ]
+    },
+    {
+     "name": "DA Amumu18",
+     "items": [
+      "DA Spirit Visage",
+      "DA Gargoyle Stoneplate",
+      "DA Warmogs Armor"
+     ]
+    },
+    {
+     "name": "DA 18 Varus",
+     "items": [
+      "DA Component BFSword",
+      "DA Spear Of Shojin"
+     ]
+    }
+   ],
+   "how": "Seen 20 times in high-rank games, usually finishing around level 8. Most common units: DA Kog Maw18 AD, DA Sentinel18, DA 18 Diana, DA Nidalee18 AP, DA 18 Aphelios."
+  },
+  {
+   "name": "DA 18 Solar / DA 18 Blossom / DA 18 Spellweaver",
+   "tier": "C",
+   "style": "Reroll",
+   "avg": 5.55,
+   "top4": 35,
+   "games": 20,
+   "units": [
+    {
+     "name": "DA 18 Yunara",
+     "items": [
+      "DA Spear Of Shojin",
+      "DA Deathblade",
+      "DA Giant Slayer"
+     ]
+    },
+    {
+     "name": "DA 18 Sejuani",
+     "items": [
+      "DA Gargoyle Stoneplate",
+      "DA Warmogs Armor",
+      "DA Crownguard"
+     ]
+    },
+    {
+     "name": "DA Karma18",
+     "items": [
+      "DA Jeweled Gauntlet",
+      "DA Blue Buff",
+      "DA Rabadons Deathcap"
+     ]
+    },
+    {
+     "name": "DA 18 Leona",
+     "items": [
+      "DA Sunfire Cape",
+      "DA Adaptive Helm",
+      "DA Crownguard"
+     ]
+    },
+    {
+     "name": "DA 18 Yorick",
+     "items": [
+      "DA Gargoyle Stoneplate",
+      "DA Thiefs Gloves",
+      "DA Warmogs Armor"
+     ]
+    },
+    {
+     "name": "DA 18 Kayle",
+     "items": [
+      "DA Thiefs Gloves",
+      "DA Titans Resolve",
+      "DA Archangels Staff"
+     ]
+    },
+    {
+     "name": "DA 18 Le Blanc",
+     "items": [
+      "DA Void Staff",
+      "DA Morellonomicon",
+      "DA Hextech Gunblade"
+     ]
+    },
+    {
+     "name": "DA 18 Veigar",
+     "items": []
+    }
+   ],
+   "how": "Seen 20 times in high-rank games, usually finishing around level 7. Most common units: DA 18 Yunara, DA 18 Sejuani, DA Karma18, DA 18 Leona, DA 18 Yorick."
   },
   {
    "name": "DA 18 Caustic / DA 18 Defender / DA 18 Adaptor",
    "tier": "C",
    "style": "Fast 8",
-   "avg": 5.8,
+   "avg": 5.85,
    "top4": 25,
    "games": 40,
    "units": [
+    {
+     "name": "DA Kog Maw18 AD",
+     "items": [
+      "DA Red Buff",
+      "DA Component Recurve Bow",
+      "DA Last Whisper"
+     ]
+    },
     {
      "name": "DA 18 Lillia",
      "items": [
       "DA Protectors Vow",
       "DA Gargoyle Stoneplate",
       "DA Crownguard"
-     ]
-    },
-    {
-     "name": "DA Kog Maw18 AD",
-     "items": [
-      "DA Red Buff",
-      "DA Component Recurve Bow",
-      "DA Component Needlessly Large Rod"
      ]
     },
     {
@@ -478,16 +622,16 @@
      "name": "DA Nidalee18 AP",
      "items": [
       "DA Steraks Gage",
-      "DA Infinity Edge",
-      "DA Edge Of Night"
+      "DA Edge Of Night",
+      "DA Infinity Edge"
      ]
     },
     {
      "name": "DA 18 Sivir",
      "items": [
       "DA Infinity Edge",
-      "DA Strikers Flail",
-      "DA Spear Of Shojin"
+      "DA Spear Of Shojin",
+      "DA Strikers Flail"
      ]
     },
     {
@@ -499,46 +643,30 @@
      ]
     },
     {
-     "name": "DA 18 Rakan",
-     "items": [
-      "DA 18 Emblem Coven"
-     ]
-    },
-    {
      "name": "DA Sentinel18",
      "items": [
       "DA Protectors Vow",
       "DA Warmogs Armor",
       "DA Gargoyle Stoneplate"
      ]
+    },
+    {
+     "name": "DA 18 Rakan",
+     "items": [
+      "DA 18 Emblem Coven"
+     ]
     }
    ],
-   "how": "Seen 40 times in high-rank games, usually finishing around level 8. Most common units: DA 18 Lillia, DA Kog Maw18 AD, DA 18 Shen, DA Nidalee18 AP, DA 18 Sivir."
+   "how": "Seen 40 times in high-rank games, usually finishing around level 8. Most common units: DA Kog Maw18 AD, DA 18 Lillia, DA 18 Shen, DA Nidalee18 AP, DA 18 Sivir."
   },
   {
    "name": "DA Riftbeast18 / DA 18 Brawler / DA 18 Invoker",
    "tier": "C",
    "style": "Fast 8",
-   "avg": 6.05,
-   "top4": 14,
-   "games": 21,
+   "avg": 5.95,
+   "top4": 18,
+   "games": 22,
    "units": [
-    {
-     "name": "DA Murkwolf18",
-     "items": [
-      "DA Infinity Edge",
-      "DA Deathblade",
-      "DA Giant Slayer"
-     ]
-    },
-    {
-     "name": "DA 18 Sentry",
-     "items": [
-      "DA Giant Slayer",
-      "DA Component BFSword",
-      "DA Guinsoos Rageblade"
-     ]
-    },
     {
      "name": "DA Krug18",
      "items": [
@@ -553,6 +681,22 @@
       "DA Protectors Vow",
       "DA Warmogs Armor",
       "DA Evenshroud"
+     ]
+    },
+    {
+     "name": "DA Murkwolf18",
+     "items": [
+      "DA Infinity Edge",
+      "DA 18 Emblem Brawler",
+      "DA Last Whisper"
+     ]
+    },
+    {
+     "name": "DA 18 Sentry",
+     "items": [
+      "DA Giant Slayer",
+      "DA Jeweled Gauntlet",
+      "DA Strikers Flail"
      ]
     },
     {
@@ -578,15 +722,15 @@
      ]
     },
     {
-     "name": "DA Gromp18 AP",
+     "name": "DA 18 Sett",
      "items": [
-      "DA Last Whisper",
-      "DA Spear Of Shojin",
-      "DA Infinity Edge"
+      "DA Gargoyle Stoneplate",
+      "DA Steraks Gage",
+      "DA Thiefs Gloves"
      ]
     }
    ],
-   "how": "Seen 21 times in high-rank games, usually finishing around level 8. Most common units: DA Murkwolf18, DA 18 Sentry, DA Krug18, DA Sentinel18, DA Brambleback18."
+   "how": "Seen 22 times in high-rank games, usually finishing around level 8. Most common units: DA Krug18, DA Sentinel18, DA Murkwolf18, DA 18 Sentry, DA Brambleback18."
   }
  ]
 }
